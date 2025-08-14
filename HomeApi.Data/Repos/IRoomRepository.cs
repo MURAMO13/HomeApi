@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
+using HomeApi.Contracts.Models.Rooms;
 using HomeApi.Data.Models;
 
 namespace HomeApi.Data.Repos
@@ -10,5 +12,6 @@ namespace HomeApi.Data.Repos
     {
         Task<Room> GetRoomByName(string name);
         Task AddRoom(Room room);
+        Task<Room?> PutchRoom(Guid id, RoomPatchRequest dto);
     }
 }
